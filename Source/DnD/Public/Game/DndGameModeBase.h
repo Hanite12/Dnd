@@ -3,17 +3,15 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Character/DnDCharacterBase.h"
-#include "DnDCharacter.generated.h"
+#include "GameFramework/GameModeBase.h"
+#include "DndGameModeBase.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class DND_API ADnDCharacter : public ADnDCharacterBase
+class DND_API ADndGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
-public:
-	ADnDCharacter();
 	
 };
