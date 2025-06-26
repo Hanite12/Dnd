@@ -3,8 +3,12 @@
 #pragma once
 
 #include "CoreMinimal.h"
+
 #include "GameFramework/Character.h"
 #include "DnDCharacterBase.generated.h"
+
+class UAbilitySystemComponent;
+class UAttributeSet;
 
 UCLASS(Abstract)
 class DND_API ADnDCharacterBase : public ACharacter
@@ -19,4 +23,10 @@ protected:
 
 	UPROPERTY(EditAnywhere, Category = "Combat")
 	TObjectPtr<USkeletalMeshComponent> Weapon;
+
+	UPROPERTY()
+	TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent;
+
+	UPROPERTY()
+	TObjectPtr<UAttributeSet> AttributeSet;
 };

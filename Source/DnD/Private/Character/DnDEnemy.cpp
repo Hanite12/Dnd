@@ -3,11 +3,17 @@
 
 #include "Character/DnDEnemy.h"
 
+#include "AbilitySystem/DnDAbilitySystemComponent.h"
 #include "DnD/DnD.h"
 
 ADnDEnemy::ADnDEnemy()
 {
 	GetMesh()->SetCollisionResponseToChannel(ECC_Visibility, ECR_Block);
+
+	AbilitySystemComponent = CreateDefaultSubobject<UDnDAbilitySystemComponent>("AbilitySystemComponent");
+	AbilitySystemComponent->SetIsReplicated(true);
+
+	AttributeSet = CreateDefaultSubobject<UAttributeSet>("AttributeSet");
 }
 
 void ADnDEnemy::HighlightActor()
